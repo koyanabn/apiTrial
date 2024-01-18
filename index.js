@@ -5,6 +5,16 @@ const options = {
   method: 'GET' //method to be performed
 };
 
+//trial data
+const data = [
+  { id: 1, name: 'aaa' },
+  { id: 2, name: 'bbb' },
+];
+
+app.get('/api/data', (req,res) => {
+  res.json(data);
+});
+
 app.use(cors());
 async function fetchRandomMeal() { //async makes a function return a Promise
   try { //await makes a function wait for a Promise
