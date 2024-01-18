@@ -1,8 +1,11 @@
+const cros = require('cors');
+const app = express();
 const endpointUrl = new URL('https://www.themealdb.com/api/json/v1/1/random.php'); //open source api, for random meals
 const options = {
   method: 'GET' //method to be performed
 };
 
+app.use(cors());
 async function fetchRandomMeal() { //async makes a function return a Promise
   try { //await makes a function wait for a Promise
     const response = await fetch(endpointUrl, options); //starts an HTTP request to the assigned URL to perform the assigned method
